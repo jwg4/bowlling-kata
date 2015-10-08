@@ -3,4 +3,4 @@ class Game(object):
         pass
 
     def score(self):
-        return -1
+        return 0
