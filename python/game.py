@@ -1,3 +1,4 @@
 class Game(object):
-    pass
+    def roll(self, pins):
+        pass
 
