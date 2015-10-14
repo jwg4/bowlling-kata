@@ -3,15 +3,16 @@ import unittest
 from game import Game
 
 class BowlingGameTest(unittest.TestCase):
+    def setUp(self):
+        self.g = Game()
+
     def test_gutter_game(self):
-        g = Game()
         for i in range(20):
-            g.roll(0)
-        self.assertEqual(g.score(), 0)
+            self.g.roll(0)
+        self.assertEqual(self.g.score(), 0)
 
     def test_all_ones(self):
-        g = Game()
         for i in range(20):
-            g.roll(1)
-        self.assertEqual(g.score(), 20)
+            self.g.roll(1)
+        self.assertEqual(self.g.score(), 20)
 
