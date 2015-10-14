@@ -8,3 +8,10 @@ class BowlingGameTest(unittest.TestCase):
         for i in range(20):
             g.roll(0)
         self.assertEqual(g.score(), 0)
+
+    def test_all_ones(self):
+        g = Game()
+        for i in range(20):
+            g.roll(1)
+        self.assertEqual(g.score(), 20)
+
