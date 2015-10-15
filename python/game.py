@@ -1,5 +1,6 @@
 class Game(object):
-    scores = []
+    def __init__(self):
+        self.scores = []
 
     def roll(self, pins):
         self.scores.append(pins)
