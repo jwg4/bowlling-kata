@@ -1,8 +1,8 @@
 class Game(object):
-    score_ = 0
+    scores = []
 
     def roll(self, pins):
-        self.score_ = self.score_ + pins
+        self.scores.append(pins)
 
     def score(self):
-        return self.score_
+        return sum(self.scores)
