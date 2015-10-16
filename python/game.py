@@ -6,4 +6,7 @@ class Game(object):
         self.scores.append(pins)
 
     def score(self):
-        return sum(self.scores)
+        total = 0
+        for s in self.scores:
+            total = total + s
+        return total
