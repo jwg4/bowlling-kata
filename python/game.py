@@ -7,6 +7,7 @@ class Game(object):
 
     def score(self):
         total = 0
-        for s in self.scores:
+        for i in range(len(self.scores)):
+            s = self.scores[i]
             total = total + s
         return total
