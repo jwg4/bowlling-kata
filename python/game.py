@@ -10,6 +10,6 @@ class Game(object):
         for i in range(len(self.scores)):
             s = self.scores[i]
             total = total + s
-            if s + self.scores[i+1] == 10:
+            if i + 1 < len(self.scores) and s + self.scores[i+1] == 10:
                 total = total + self.scores[i+1]
         return total
