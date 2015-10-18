@@ -25,3 +25,11 @@ class BowlingGameTest(unittest.TestCase):
         self.roll_many(17, 0)
         self.assertEqual(self.g.score(), 16)
 
+    def test_successive_rolls_sum_to_10(self):
+        """ Two rolls sum to ten, but which are part of different frames."""
+        self.g.roll(3)
+        self.g.roll(5)
+        self.g.roll(5)
+        self.roll_many(17, 0)
+        self.assertEqual(self.g.score(), 13)
+
