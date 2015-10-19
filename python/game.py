@@ -10,10 +10,11 @@ class Game(object):
         count = len(self.scores)
         j = 0
         frames = []
-        while j < count:
+        while j < count and len(frames) < 10:
             frame = self.scores[j:j+2]
             if frame[0] == 10:
-                frame.append(self.scores[j+2])
+                if j + 2 < len(self.scores):
+                    frame.append(self.scores[j+2])
                 j = j + 1
             elif sum(frame) == 10:
                 frame.append(self.scores[j+2])
