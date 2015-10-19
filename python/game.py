@@ -6,7 +6,6 @@ class Game(object):
         self.scores.append(pins)
 
     def score(self):
-        total = 0
         j = 0
         frames = []
         while len(frames) < 10:
@@ -20,6 +19,4 @@ class Game(object):
             else:
                 j = j + 2
             frames.append(frame)
-        for f in frames:
-            total = total + sum(f)
-        return total
+        return sum(sum(frame) for frame in frames)
