@@ -40,3 +40,7 @@ class BowlingGameTest(unittest.TestCase):
         self.roll_many(17, 0)
         self.assertEqual(self.g.score(), 26)
 
+    def test_300_game(self):
+        self.roll_many(12, 10)
+        self.assertEqual(self.g.score(), 300)
+
