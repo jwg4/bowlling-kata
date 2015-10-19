@@ -44,3 +44,8 @@ class BowlingGameTest(unittest.TestCase):
         self.roll_many(12, 10)
         self.assertEqual(self.g.score(), 300)
 
+    def test_spare_in_final_frame(self):
+        self.roll_many(18, 0)
+        self.roll_many(3, 5)
+        self.assertEqual(self.g.score(), 15)
+
