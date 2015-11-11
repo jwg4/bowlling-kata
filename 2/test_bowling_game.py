@@ -10,3 +10,5 @@ class TestBowlingGame(unittest.TestCase):
     def test_single_roll(self):
         game = BowlingGame()
         game.roll(1)
+        self.assertEqual(game.score(), 1)
+
