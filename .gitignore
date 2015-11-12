@@ -1,3 +1,4 @@
 *.ppt
 .~lock*
 /venv
+/.hypothesis

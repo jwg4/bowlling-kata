@@ -1,4 +1,6 @@
 import unittest
+import hypothesis
+import hypothesis.strategies
 
 from bowling_game import BowlingGame
 
@@ -7,8 +9,9 @@ class TestBowlingGame(unittest.TestCase):
         game = BowlingGame()
         self.assertEqual(game.score(), 0)
 
-    def test_single_roll(self):
+    @hypothesis.given(hypothesis.strategies.integers(0, 10))
+    def test_single_roll(self, x):
         game = BowlingGame()
-        game.roll(1)
-        self.assertEqual(game.score(), 1)
+        game.roll(x)
+        self.assertEqual(game.score(), x)
 
