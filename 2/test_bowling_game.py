@@ -13,6 +13,8 @@ class TestBowlingGame(unittest.TestCase):
 
     @hypothesis.given(hypothesis.strategies.integers(0, 10))
     def test_single_roll(self, x):
+        self.game = BowlingGame()
+        self.assertEqual(self.game.score(), 0)
         self.game.roll(x)
         self.assertEqual(self.game.score(), x)
 

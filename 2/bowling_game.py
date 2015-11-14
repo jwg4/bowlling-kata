@@ -1,5 +1,6 @@
 class BowlingGame(object):
-    _score = 0
+    def __init__(self):
+        self._score = 0
 
     def score(self):
         return self._score
