@@ -5,4 +5,4 @@ class BowlingGame(object):
         return self._score
 
     def roll(self, pins):
-        self._score = pins
+        self._score = self._score + pins
