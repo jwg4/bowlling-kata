@@ -23,7 +23,6 @@ class TestBowlingGame(unittest.TestCase):
         self.game.roll(2)
         self.assertEqual(self.game.score(), 5)
 
-    @unittest.skip("Don't worry about this test until test_two_rolls() passes.")
     def test_spare(self):
         self.game.roll(4)
         self.game.roll(6)
