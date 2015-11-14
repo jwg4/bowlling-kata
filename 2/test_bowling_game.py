@@ -36,4 +36,6 @@ class TestBowlingGame(unittest.TestCase):
         self.game.roll(5)
         self.game.roll(5)
         self.assertEqual(self.game.score(), 13)
+        self.game.roll(3)
+        self.assertEqual(self.game.score(), 16)
 
