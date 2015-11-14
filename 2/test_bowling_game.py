@@ -23,9 +23,11 @@ class TestBowlingGame(unittest.TestCase):
         self.game.roll(2)
         self.assertEqual(self.game.score(), 5)
 
-    def test_spare(self):
+    @hypothesis.given(hypothesis.strategies.integers(0, 10))
+    def test_spare(self, x):
+        self.game = BowlingGame()
         self.game.roll(4)
         self.game.roll(6)
-        self.game.roll(5)
-        self.assertEqual(self.game.score(), 20)
+        self.game.roll(x)
+        self.assertEqual(self.game.score(), 10 + 2 * x)
 
