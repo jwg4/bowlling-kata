@@ -5,13 +5,14 @@ import hypothesis.strategies
 from bowling_game import BowlingGame
 
 class TestBowlingGame(unittest.TestCase):
+    def setUp(self):
+        self.game = BowlingGame()
+
     def test_score_before_any_rolls(self):
-        game = BowlingGame()
-        self.assertEqual(game.score(), 0)
+        self.assertEqual(self.game.score(), 0)
 
     @hypothesis.given(hypothesis.strategies.integers(0, 10))
     def test_single_roll(self, x):
-        game = BowlingGame()
-        game.roll(x)
-        self.assertEqual(game.score(), x)
+        self.game.roll(x)
+        self.assertEqual(self.game.score(), x)
 
