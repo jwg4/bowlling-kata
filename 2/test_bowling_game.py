@@ -43,3 +43,8 @@ class TestBowlingGame(unittest.TestCase):
         self.game.roll(10)
         self.assertEqual(self.game.score(), 10)
 
+    def test_strike_and_next_roll(self):
+        self.game.roll(10)
+        self.game.roll(5)
+        self.assertEqual(self.game.score(), 20)
+
